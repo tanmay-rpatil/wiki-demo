@@ -1,0 +1,13 @@
+#folder to ignore
+heroku_django_env/
+heroku_django_env/*
+encyclopedia/__pycache__/*
+wiki/__pycache__/*
+encyclopedia/__pycache__/
+wiki/__pycache__/
+*/__pycache__/*
+*/__pycache__/
+.env
+.envrc
+.vscode/
+./.vscode/
