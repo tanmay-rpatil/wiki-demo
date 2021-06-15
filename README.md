@@ -26,8 +26,8 @@
 ## Development
 
 1. Get python version from runtime.txt
-2. Install requirements from requirements.txt ( preferably setup a virtual environment!)
-3. Set environment variables ``` SECRET_KEY ``` and ``` DEBUG ``` to get your website up and running on a 'nix OS (for others)
+2. Install requirements from requirements.txt ( preferably setup a [virtual environment!](https://docs.python.org/3/library/venv.html))
+3. Set environment variables ``` SECRET_KEY ``` and ``` DEBUG ``` to get your website up and running on a 'nix OS ( [guidefor other OS](https://www.twilio.com/blog/2017/01/how-to-set-environment-variables.html) )
 
     ``` bash 
     $ export SECRET_KEY=yourKeyHere
