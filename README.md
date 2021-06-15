@@ -13,6 +13,8 @@
 	'Detail View':'/api/entry-detail/<int:pk>/',
 	'Create':'/api/entry-create/',
 	'Update':'/api/entry-update/<int:pk>/',
+	'Random':'/api/entry-random/',
+	'Search':'/api/entry-search/?q=<str:search_query>',
 	'Delete':'/api/entry-delete/<int:pk>/',
 ```
 

@@ -11,9 +11,11 @@ import random
 def apiOverview(request):
 	api_urls = {
 	'List':'/entry-list/',
-	'Detail View':'/entry-detail/<str:pk>/',
+	'Detail View':'/entry-detail/<int:pk>/',
 	'Create':'/entry-create/',
 	'Update':'/entry-update/<int:pk>/',
+	'Random':'/entry-random/',
+	'Search':'/entry-update/?q=<str:search_query>',
 	'Delete':'/entry-delete/<int:pk>/',
 	}
 	return Response(api_urls)
