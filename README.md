@@ -43,3 +43,6 @@
 1. wiki-demo/api djngo app for implementing the REST API
 2. wiki-demo/encyclopedia django for Articles
 3. Procfile for Heroku configurations
+
+
+summernote

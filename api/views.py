@@ -2,7 +2,9 @@ from rest_framework import status
 from rest_framework.reverse import reverse
 from .serializers import EntrySerializer, EntryListSerializer
 from encyclopedia.models import Entry
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view,authentication_classes, permission_classes
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 import random
 # Create your views here.
@@ -15,7 +17,7 @@ def apiOverview(request):
 	'Create':'/entry-create/',
 	'Update':'/entry-update/<int:pk>/',
 	'Random':'/entry-random/',
-	'Search':'/entry-update/?q=<str:search_query>',
+	'Search':'/entry-search/?q=<str:search_query>',
 	'Delete':'/entry-delete/<int:pk>/',
 	}
 	return Response(api_urls)
@@ -53,6 +55,8 @@ def entrydeatil(request,pk,format=None):
 	return Response(serializer.data)
 
 @api_view(['POST'])
+@authentication_classes([SessionAuthentication, BasicAuthentication])
+@permission_classes([IsAuthenticated])
 def entrycreate(request,format=None):
 	serializer = EntrySerializer(data=request.data)
 	if serializer.is_valid():
