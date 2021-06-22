@@ -65,6 +65,8 @@ def entrycreate(request,format=None):
 	return Response(serializer.data)
 
 @api_view(['PUT'])
+@authentication_classes([SessionAuthentication, BasicAuthentication])
+@permission_classes([IsAuthenticated])
 def entryupdate(request,pk,format=None):
 	try:	
 		entry = Entry.objects.get(pk=pk)
@@ -76,6 +78,8 @@ def entryupdate(request,pk,format=None):
 	return Response(serializer.data)
 
 @api_view(['DELETE'])
+@authentication_classes([SessionAuthentication, BasicAuthentication])
+@permission_classes([IsAuthenticated])
 def entrydelete(request,pk,format=None):
 	try:	
 		entry = Entry.objects.get(pk=pk)
